@@ -5,9 +5,6 @@ jobs:
       - image: pstauffer/curl
     steps:
       - run:
-          name: Install curl
-          command: apt-get update && apt-get install -y curl
-      - run:
           name: "Trigger full-stack test"
           command: "curl -u ${CIRCLE_API_KEY}: -d build_parameters[CIRCLE_JOB]=start_workflows https://circleci.com/api/v1.1/project/github/Claudweb/ep-docker/tree/master"
 workflows:
