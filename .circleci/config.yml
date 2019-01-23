@@ -6,7 +6,7 @@ jobs:
     steps:
       - run:
           name: "Trigger full-stack test"
-          command: "curl -u ${CIRCLE_API_KEY}: -d build_parameters[CIRCLE_JOB]=start_workflows https://circleci.com/api/v1.1/project/github/Claudweb/ep-docker/tree/master"
+          command: "curl -u ${CIRCLE_API_KEY}: -d build_parameters[CIRCLE_JOB]=start_workflows https://circleci.com/api/v1.1/project/github/${CIRCLE_USER}/ep-docker/tree/master"
 workflows:
   version: 2
   downstream:
