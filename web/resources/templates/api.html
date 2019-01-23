@@ -1,4 +1,4 @@
-{{define "title"}}Evepraisal - API Documentation{{end}}
+{{define "title"}}skypraisal - API Documentation{{end}}
 
 {{define "content"}}
 <style>
@@ -18,7 +18,7 @@ pre {
   <p>This endpoint returns the details for an appraisal in JSON format. The data includes everything needed to render the appraisal page. The most important part of the response is in the "totals" top-level key which includes the total buy price and sell price.</p>
 
   <h4>CURL Example</h4>
-  <pre><code>curl "https://evepraisal.com/a/coyaw.json"</code></pre>
+  <pre><code>curl "{{.UI.BaseURL}}/a/coyaw.json"</code></pre>
 
   <pre><code>{
     "created": 1505592961,
@@ -85,7 +85,7 @@ pre {
   <p>This enpoint creates a new appraisal.</p>
 
   <h4>CURL Example (without persisting)</h4>
-  <pre><code>curl -XPOST "https://evepraisal.com/appraisal.json?market=jita&raw_textarea=avatar&persist=no"</code></pre>
+  <pre><code>curl -XPOST "{{.UI.BaseURL}}/appraisal.json?market=jita&raw_textarea=avatar&persist=no"</code></pre>
 
   <pre><code>{
     "appraisal": {
@@ -149,7 +149,7 @@ pre {
 }</code></pre>
 
   <h4>CURL Example (with persisting)</h4>
-  <pre><code>curl -XPOST "https://evepraisal.com/appraisal.json?market=jita&raw_textarea=avatar"</code></pre>
+  <pre><code>curl -XPOST "{{.UI.BaseURL}}/appraisal.json?market=jita&raw_textarea=avatar"</code></pre>
 
   <pre><code>{
     "appraisal": {
@@ -214,7 +214,7 @@ pre {
 }</code></pre>
 
   <h4>CURL Example using POST data</h4>
-  <pre><code>curl -v "https://evepraisal.com/appraisal.json?market=jita" --data "avatar"</code></pre>
+  <pre><code>curl -v "{{.UI.BaseURL}}/appraisal.json?market=jita" --data "avatar"</code></pre>
 
   <pre><code>{
     "appraisal": {
