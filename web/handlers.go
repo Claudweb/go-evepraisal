@@ -52,7 +52,7 @@ func (ctx *Context) HandleAPIDocs(w http.ResponseWriter, r *http.Request) {
 func (ctx *Context) HandleRobots(w http.ResponseWriter, r *http.Request) {
 	r.Header["Content-Type"] = []string{"text/plain"}
 	io.WriteString(w, `User-agent: *
-Disallow:`)
+Disallow:/*.json`)
 }
 
 // HandleFavicon is the handler for /favicon.ico
